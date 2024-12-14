@@ -1,33 +1,36 @@
-name: Deploy to GCS
+name: Deploy to Google Cloud Storage
 
 on:
-  workflow_dispatch:  # Allow manual triggering of the workflow
+  workflow_dispatch:
   push:
     branches:
-      - main  # Run workflow on pushes to the main branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      # Step 2: Set up Google Cloud SDK authentication
-      - name: Authenticate to GCP
-        uses: google-github-actions/auth@v1
-        with:
-          credentials_json: ${{ secrets.GCP0 }}
+    - name: Set up GCP credentials
+      run: |
+        echo "${{ secrets.GCP0 }}" > gcloud.json
+        gcloud auth activate-service-account --key-file=gcloud.json
 
-      # Step 3: Install Google Cloud CLI (replacing google-cloud-sdk)
-      - name: Install Google Cloud CLI
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-cloud-cli
+    - name: Set Project
+      run: |
+        gcloud config set project garnet-cs-website
 
-      # Step 4: Sync files to the GCS bucket
-      - name: Deploy to GCS
-        run: |
-          gsutil -m rsync -r . gs://garnetcs-temp/
+    - name: Verify Authentication
+      run: |
+        gcloud auth list
+        gcloud config list
+
+    - name: Deploy files to Google Cloud Storage
+      run: |
+        gsutil -m rsync -r . gs://garnetcs-temp/
+
+    - name: Clean up credentials
+      run: rm gcloud.json
