@@ -18,7 +18,7 @@ jobs:
       env:
         GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud.json
       run: |
-        echo "${{ secrets.GCP0 }}" > $GOOGLE_APPLICATION_CREDENTIALS
+        echo "${{ secrets.GCP0 }}" | base64 --decode > $GOOGLE_APPLICATION_CREDENTIALS
         echo "Credentials saved to: $GOOGLE_APPLICATION_CREDENTIALS"
         cat $GOOGLE_APPLICATION_CREDENTIALS  # Optional: Print for debug (remove for security)
 
