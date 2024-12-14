@@ -22,6 +22,12 @@ jobs:
         echo "Credentials saved to: $GOOGLE_APPLICATION_CREDENTIALS"
         cat $GOOGLE_APPLICATION_CREDENTIALS  # Optional: Print for debug (remove for security)
 
+    - name: Validate Key File
+      run: |
+        echo "Validating key file..."
+        cat ${{ runner.temp }}/gcloud.json
+        jq '.' ${{ runner.temp }}/gcloud.json
+   
     - name: Authenticate with GCP
       env:
         GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud.json
