@@ -1,4 +1,4 @@
-name: Deploy to GCS
+name: Deploy to Dev
 
 on:
   push:
@@ -20,6 +20,12 @@ jobs:
         echo "${{ secrets.GCP_SA_KEY }}" > $GOOGLE_APPLICATION_CREDENTIALS
         gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
         gcloud config set project garnet-cs-website
+
+    - name: Debug Authentication
+      run: |
+        echo "Verifying authentication..."
+        gcloud auth list
+        gcloud config list project
 
     - name: Deploy files to Google Cloud Storage
       run: |
