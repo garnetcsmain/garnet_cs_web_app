@@ -19,7 +19,7 @@ jobs:
       - name: Authenticate to GCP
         uses: google-github-actions/auth@v1
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          credentials_json: ${{ secrets.GCLOUD }}
 
       # Step 3: Install Google Cloud CLI (replacing google-cloud-sdk)
       - name: Install Google Cloud CLI
