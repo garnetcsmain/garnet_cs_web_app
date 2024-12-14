@@ -1,4 +1,4 @@
-name: Deploy to Dev
+name: Deploy to GCP
 
 on:
   push:
@@ -10,29 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Debug JSON File
-      run: |
-        echo "Debugging JSON File"
-        echo "${{ secrets.GCP_SA_KEY }}" > /tmp/debug.json
-        cat /tmp/debug.json
+      - name: Authenticate with GCP
+        run: |
+          gcloud auth activate-service-account --key-file=.github/workflows/gcloud.json
+          gcloud config set project garnet-cs-website
+          gcloud auth list
 
-    - name: Authenticate to Google Cloud
-      env:
-        GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud.json
-      run: |
-        echo "${{ secrets.GCP_SA_KEY }}" > $GOOGLE_APPLICATION_CREDENTIALS
-        gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
-        gcloud config set project garnet-cs-website
-
-    - name: Debug Authentication
-      run: |
-        echo "Verifying authentication..."
-        gcloud auth list
-        gcloud config list project
-
-    - name: Deploy files to Google Cloud Storage
-      run: |
-        gsutil -m rsync -r . gs://garnetcs-temp/
+      - name: Deploy to Google Cloud Storage
+        run: |
+          gsutil -m rsync -r ./ gs://garnetcs-temp/
