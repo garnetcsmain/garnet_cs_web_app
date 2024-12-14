@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "garnet-cs-website",
+  "private_key_id": "922a390f4fe9402c610ae15358a960f300668711",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCdNmKizc26CV5V\nb253hVA1D+hThc63Ld5KLpdwwmdxEul+hf7XMk5KkI4zhbsi9ogiYGKOfUt9jLuI\nHRdcchFu/bYKJflIXGRa0rWxUx4BXyVUSgEF3zqCNWicEDSEtvyalwO4GW/G5hbM\ng9LB1Vv+9Gg2vpVJMOK856+Rw2vVsj/r/+a1AxXQxsoyZYf4d3LFodyefMKBusBt\n6IV+7AjAqRkkFmnDHG+kB2lum9ubil+gYEhDFZKkkry0vb1w9bP0gwC0PzdaElNz\nh5W7S5evtqF1GphXW4W7BFFPhnIRBbGRN5+/twWFlpwOwjj59t09FErWH7j0sXCS\n7yuXPKUXAgMBAAECggEAQSCOFQ63+qk15KPAehAGray03KDyhU0hqM6LWyGV87BX\nfVwqOeDzsQ0Yc7yjTTUfKUqPmaLLOqwp5hXTHy98DGRbXPHlRrZLtppSva6GoB/X\n2Ya8zL9wwA87EmfeMdqSY8JKvqH+/cFE0Z2MmlL2hPSgFYm3U3ZGf+ZlA7gWvJQw\nRTElEu3tN6SyZ8IOnGHbFFfZM6QdTEe+oWwzyFJloAAjMw+/fHvbU3hcLj9Ia4if\ni6wkiwo2H8cMcJYJbWBjktZipYhF7g76UwoO+lwvI6Y0kVh6uFe3r5bqhAFeyc6G\npkKbHlgdSPC8guq3m5V/LP9ftLA254QBUywV9OeclQKBgQDVEPNFpMPsi/YM6Y9U\nxS4kv+tZpRpsx+h+5c2Iy5foWgS1g7iaDcUmXt/eiSgAr9aNxYsj44xQHk5l3gUf\nNMxmRfiSbck1ERt6jDoueFpzQw4cn4nizLtadGFRsfKLEO+QoO2RBfNqIE4kl5cQ\nihw+B1xbvrexkA5xDX/rXIyFvQKBgQC85DXue1b0X+lE6S6Mfcv4pKJyGb9Cyvo7\ncr2CEpYNQ+SO5T45DMyG34nFRGakpvtChvBHCcZI2M8lPVEKylGayGah95+jtznu\n1MUts4ajf+U8k8bcX3ft6rDgnOLBrq0FX8m7IrgXuFX9GukSmvawvl31OrNsqUv7\nSmALg9bxYwKBgCYfSEe3uU6DpFyfFYQnW6A7rpJ1lgrMoe7Ck0nck6uBH8KSdN8r\ng5Df/NJGXB/zVkI7jC+5sQtMwN49IVF6EvBhqJ4agpu6Gd6NZIOYCScCYm4ApZ0s\n4IDIvfjuC+WR/Cs2gAsos2rTqOenL+JHs9HtYzsPHrLogYz8y1yDTKlJAoGBAKFl\nKQO9FV42uT0tNJ3MOsUX/skZYMe0YTz8XBpQwS9SbG8ARzs9yWAQjkokmMNk/dkp\nLRK1slu6DLyX+LAMkM99HdyUlS2wt+pumI/lDkyTUg6Bge/4DqQV3M3+nu24z5OA\n9gBUuRFjau2Z2b4Q9GmuLuADKR3WRdrQAOK14qlbAoGBANGFd8OOXetVHHAlhsiv\nos6P+At//ST0EOqU2fC0iDpTMKeMNPzgPizZnKjL68IbpGnLsO88cctp67JmmAc2\n8sSgAbcpJB8E3sdxMKp6WaIvH/GQDVkrOg2Fdfe/Xg5/CKw9ndNqgx5ja4iXVaFE\nzNnfgtquMJQhtUdbowV3F6tU\n-----END PRIVATE KEY-----\n",
+  "client_email": "github-deployer@garnet-cs-website.iam.gserviceaccount.com",
+  "client_id": "117477745222608924336",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/github-deployer%40garnet-cs-website.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
